@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="rps" href="rps.js">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+//Function allows the computer to choose an option between rock paper and sissors 
+      function getComputerChoice(){
+           const num = Math.floor(Math.random()*3)
+
+           if(num ===0){
+            return "Rock";
+           }
+           else if(num===1){
+            return "Paper";
+           }
+           else if(num===2){
+            return "Sissors";
+           }
+           
+      }
+      /** This function allows the player to play a round of rps
+       * @param playerSelection
+       * @param computerSelection
+       * */
+
+       function playRound(playerSelection, computerSelection){
+      
+        playerSelection.toUpperCase();
+        
+
+
+      }
+      ComputerSelection = getComputerChoice();
+     
+      
+      
+    </script>
+</body>
+</html>
