@@ -31,15 +31,48 @@
        * */
 
        function playRound(playerSelection, computerSelection){
-      
-        playerSelection.toUpperCase();
+       
+        if(playerSelection =="rock".toUpperCase().toLowerCase() && computerSelection=="Paper"){
+            return "Computer wins, paper beats rock"
+        }
+        else if(playerSelection =="paper".toUpperCase().toLowerCase() && computerSelection=="Scissors"){
+            return "Computer wins, Scissors beats Paper"
+        }
+        else if(playerSelection =="scissors".toUpperCase().toLowerCase() &&computerSelection=="Rock"){
+            return "Computer wins, Rock beats Scissors"
+        }
+        else if(playerSelection =="paper".toUpperCase().toLowerCase() && computerSelection=="Rock"){
+            return "You win! Paper beats Rock"
+        }
+        else if(playerSelection =="scissors".toUpperCase().toLowerCase() && computerSelection=="Paper"){
+            return "You win! Scissors beat Paper"
         
-
-
+        }
+        else if(playerSelection=="rock".toUpperCase().toLowerCase() && computerSelection=="Scissors"){
+            return "You win! Rock beats Scissors "
+        }
+        else if(playerSelection =="rock".toUpperCase().toLowerCase() && computerSelection=="Rock"){
+            return "Draw rock cant beat rock"
+        }
+        else if(playerSelection =="paper".toUpperCase().toLowerCase() & computerSelection=="Paper"){
+            return "Draw paper cant beat paper"
+        }
+        else if(playerSelection =="scissors".toUpperCase().toLowerCase() & computerSelection=="Scissors"){
+            return "Draw Scissors cant beat Scissors"
+        }
+        
+        
+        
       }
-      ComputerSelection = getComputerChoice();
-     
-      
+      const playerSelection = "scissors";
+   
+      const computerSelection = getComputerChoice();
+     //This function allows for 5 rounds to be played
+      function game(playRound){
+        for(let i=0; i<5; i++){
+
+        }
+      }
       
     </script>
 </body>
