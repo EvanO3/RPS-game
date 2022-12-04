@@ -9,22 +9,106 @@
 </head>
 <body>
     <script>
-    
-//Function allows the computer to choose an option between rock paper and sissors 
-      function getComputerChoice(){
-        
-        
-        
-      }
-      const playerSelection = "scissors";
-   
-      const computerSelection = getComputerChoice();
-     //This function allows for 5 rounds to be played
-      function game(playRound){
-        for(let i=0; i<5; i++){
+     
 
-        }
+    const  rps  = ["rock", "paper", "scissors"];
+function getComputerChoice(){
+      const choice = rps[Math.floor(Math.random()*rps.length)]
+      return choice;
+    
+        
       }
+      
+     
+function checkWinner(playerSelection, computerSelection){
+    
+    if(playerSelection == computerSelection){
+        return"tie"
+       }
+       else if(
+        (playerSelection == 'rock' &&computerSelection=='scissors') ||
+        (playerSelection == 'scissors' && computerSelection== 'paper') ||
+        (playerSelection == 'paper' && computerSelection =='rock')
+        ){
+            return "Player"
+        }else{
+            return "Computer"
+        }
+    }
+
+
+      function playRound(playerSelection, computerSelection){
+         
+    const result = checkWinner(playerSelection, computerSelection);
+    if(result== "tie"){
+        return "its a tie"
+    }
+    else if(result == "Player"){
+        return `you win ${playerSelection} beats ${computerSelection}`
+    }
+    else{
+        return `you lose ${computerSelection} beats ${playerSelection}`
+    }
+
+ }
+ function playerChoice(){
+    let properInput =false;
+    while(properInput== false){
+        const choice = prompt("Rock, Paper, Scissors");
+        if(choice == null){
+            continue;
+        }
+        const choiceInlwr = choice.toLowerCase();
+        if(rps.includes(choiceInlwr)){
+            properInput == true;
+            return choiceInlwr
+        }
+ }
+}
+
+ 
+
+function game(){
+    let scoreComp = 0;
+    let scorePlayer =0;
+   for(let i=0; i<5; i++){
+    const playerSelection = playerChoice();
+    const computerSelection= getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
+   
+   if(checkWinner(playerSelection, computerSelection)=="Player"){
+    scorePlayer++
+   }
+   else if(checkWinner(playerSelection, computerSelection)=="Computer"){
+    scoreComp++
+   }
+}
+   console.log("Game Over")
+   if(scorePlayer > scoreComp){
+    console.log( "Player wins with a score of " + scorePlayer)
+   }
+   else if(scorePlayer< scoreComp){
+    console.log("Computer wins with a score of " + scoreComp)
+   }
+   
+}
+
+
+game();
+        
+      
+     
+
+  
+        
+        
+        
+         
+         
+
+        
+        
+      
       
     </script>
 </body>
