@@ -12,54 +12,6 @@
     
 //Function allows the computer to choose an option between rock paper and sissors 
       function getComputerChoice(){
-           const num = Math.floor(Math.random()*3)
-
-           if(num ===0){
-            return "Rock";
-           }
-           else if(num===1){
-            return "Paper";
-           }
-           else if(num===2){
-            return "Sissors";
-           }
-           
-      }
-      /** This function allows the player to play a round of rps
-       * @param playerSelection
-       * @param computerSelection
-       * */
-
-       function playRound(playerSelection, computerSelection){
-       
-        if(playerSelection =="rock".toUpperCase().toLowerCase() && computerSelection=="Paper"){
-            return "Computer wins, paper beats rock"
-        }
-        else if(playerSelection =="paper".toUpperCase().toLowerCase() && computerSelection=="Scissors"){
-            return "Computer wins, Scissors beats Paper"
-        }
-        else if(playerSelection =="scissors".toUpperCase().toLowerCase() &&computerSelection=="Rock"){
-            return "Computer wins, Rock beats Scissors"
-        }
-        else if(playerSelection =="paper".toUpperCase().toLowerCase() && computerSelection=="Rock"){
-            return "You win! Paper beats Rock"
-        }
-        else if(playerSelection =="scissors".toUpperCase().toLowerCase() && computerSelection=="Paper"){
-            return "You win! Scissors beat Paper"
-        
-        }
-        else if(playerSelection=="rock".toUpperCase().toLowerCase() && computerSelection=="Scissors"){
-            return "You win! Rock beats Scissors "
-        }
-        else if(playerSelection =="rock".toUpperCase().toLowerCase() && computerSelection=="Rock"){
-            return "Draw rock cant beat rock"
-        }
-        else if(playerSelection =="paper".toUpperCase().toLowerCase() & computerSelection=="Paper"){
-            return "Draw paper cant beat paper"
-        }
-        else if(playerSelection =="scissors".toUpperCase().toLowerCase() & computerSelection=="Scissors"){
-            return "Draw Scissors cant beat Scissors"
-        }
         
         
         
