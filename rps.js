@@ -22,14 +22,16 @@ scissors.addEventListener('click', function(){
          let computerSelection =getComputerChoice();
          playRound(playerSelection, computerSelection);
 });
-const playerAmount = document.querySelector('#player-score');
-const compAmount = document.querySelector('#computer-score');
-const results = document.querySelector('#results');
+ const playerAmount = document.querySelector('#player-score')
+ const compAmount = document.querySelector('#computer-score');
+const ties = document.querySelector('#ties');
 let playerScore =0;
 let compScore=0;
 let tie =0;
 
-
+console.log(rock);
+console.log(scissors);
+console.log(paper);
 // Gets the computers choice
 
 const  rps  = ["rock", "paper", "scissors"];
@@ -42,18 +44,23 @@ function getComputerChoice(){
 //Win method
 
 playerWin =()=>{
-console.log(++playerScore);
-playerScore.innerHTML = "Your Score is: " + playerScore;
+ ++ playerScore;
+ playerAmount.innerText = "Your score is currently: " + playerScore;
+ 
 }
 
+
 compWin = ()=>{
-    console.log(++compScore);
-    compScore.innerHTML = "Your Score is: " + compScore;
+    
+   ++compScore;
+   compAmount.innerText = "Computer Score is currently: " + compScore;
 }
 
 tieAmount = ()=>{
-   console.log(++tie);
-    tie.innerHTML = "Tie rounds " +tie;
+    ++tie;
+  ties.innerText = 'Amount of ties: ' +tie;
+
+ 
 }
 
 
@@ -61,30 +68,43 @@ tieAmount = ()=>{
 playRound = (playerSelection, compSelection)=>{
     if(playerSelection == "rock" && compSelection == "paper"){
     compWin();
+    
     }
     else if(playerSelection=='rock' && compSelection=='rock'){
         tieAmount();
+       
+
     }
     else if(playerSelection=='rock'&& compSelection=='scissors'){
            playerWin();
+          
     }
+
     if(playerSelection=='paper' && compSelection=='rock'){
        playerWin();
+    
     }
     else if(playerSelection== 'paper' && compSelection=='paper'){
         tieAmount();
+        
+
     }
     else if(playerSelection=='paper' && compSelection=='scissors'){
                     compWin();
+                   
     }
     if(playerSelection=='scissors' && compSelection=='rock'){
                compWin();
+             
     }
     else if(playerSelection=='scissors' && compSelection=='paper'){
         playerWin();
+ 
     }
     else if(playerSelection=='scissors' && compSelection=='scissors'){
         tieAmount();
+       
+
     }
     if(playerScore ==5){
         alert('Congrats you won and outsmarted the computer!');
@@ -92,6 +112,7 @@ playRound = (playerSelection, compSelection)=>{
     }
     else if(compScore==5){
         alert('Awh man, you lost.... Better luck next time')
+        reset();
     }
 }
     
@@ -100,9 +121,9 @@ playRound = (playerSelection, compSelection)=>{
 // to reset the game method
 
 reset =()=>{
-    playerScore.innerHTML = 'Your score is: 0'
-    compScore.innerHTML = 'Computer Score is: 0'
-    tieAmount.innerHTML= 'Tie rounds:0'
+    playerScore.innerText = 'Your score is: ' + playerScore
+    compScore.innerText = 'Computer Score is currently: ' +compScore
+    tieAmount.innerText = 'Tie Score is: ' +tieAmount;
 }
 
 
