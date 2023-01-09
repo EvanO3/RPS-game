@@ -4,23 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Pacifico">
+
   
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-   <h1>Rock Paper Scissors</h1>
-<div>
+    <!--This section starts the game -->
+    <div class="container">
+    <h1 class =title>Rock Paper Scissors</h1>
+   </div>
+   <div class="intro">
+   <p>Play the game if you dare</p>
+   </div>
+
+<div class = buts>
     <button id ='rock'>Rock</button>
     <button class = 'paper'>Paper</button>
     <button class ='scissors'>Scissors</button>
 </div>
 
 <div id ='result'>
-    <p id ='ties'>Amount of ties:</p>
-    <p id ='results'>Final Score is </p>
     <p id ='player-score'>Your score is currently: 0</p>
     <p id ='computer-score'>The computers score is currently: 0</p>
- 
+</div>
+<div class =final>
+    <p id ='ties'>Amount of ties:</p>
+    
 </div>
 <script src ="rps.js"></script>  
 </body>

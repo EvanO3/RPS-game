@@ -1,0 +1,41 @@
+body{
+    margin:0px;
+    background-image: url(/img/background.jpeg);
+    background-size: 888px;
+}
+
+.title{
+    font-family: Pacifico, arial, sans-serif;
+    font-style: Pacifico;
+    align-content: center;
+    font-size: 60px;
+}
+
+.container{
+    display:flex;
+    justify-content:center;
+    align-items: center;
+}
+.buts{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+}
+#result{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap: 10px;
+
+}
+.final{
+    display: flex;
+    justify-content:center;
+    
+}
+.intro{
+      display: flex;
+      justify-content:center;
+      align-items:center;
+}
