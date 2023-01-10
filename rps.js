@@ -1,3 +1,5 @@
+
+
 const rock = document.querySelector('#rock');
 
 rock.addEventListener('click', function(){
@@ -25,9 +27,15 @@ scissors.addEventListener('click', function(){
  const playerAmount = document.querySelector('#player-score')
  const compAmount = document.querySelector('#computer-score');
 const ties = document.querySelector('#ties');
+// for output
+const output = document.querySelector('.text');
+output.textContent="May the Best Win"
+
 let playerScore =0;
 let compScore=0;
 let tie =0;
+
+
 
 console.log(rock);
 console.log(scissors);
@@ -67,52 +75,64 @@ tieAmount = ()=>{
 
 playRound = (playerSelection, compSelection)=>{
     if(playerSelection == "rock" && compSelection == "paper"){
+        output.textContent = `You lost! You chose ${playerSelection} and The computer chose ${compSelection}`;
     compWin();
     
     }
     else if(playerSelection=='rock' && compSelection=='rock'){
+        output.textContent = `Its a tie! You chose ${playerSelection} and The computer chose ${compSelection}`;
         tieAmount();
        
 
     }
     else if(playerSelection=='rock'&& compSelection=='scissors'){
+        output.textContent = `You won! You chose ${playerSelection} and The computer chose ${compSelection}`;
            playerWin();
           
     }
 
     if(playerSelection=='paper' && compSelection=='rock'){
+        output.textContent = `You won! You chose ${playerSelection} and The computer chose ${compSelection}`;
        playerWin();
     
     }
     else if(playerSelection== 'paper' && compSelection=='paper'){
+        output.textContent = `Its a tie! You chose ${playerSelection} and The computer chose ${compSelection}`;
         tieAmount();
         
 
     }
     else if(playerSelection=='paper' && compSelection=='scissors'){
+        output.textContent = `You lost! You chose ${playerSelection} and The computer chose ${compSelection}`;
                     compWin();
                    
     }
     if(playerSelection=='scissors' && compSelection=='rock'){
+        output.textContent = `You lost! You chose ${playerSelection} and The computer chose ${compSelection}`;
                compWin();
              
     }
     else if(playerSelection=='scissors' && compSelection=='paper'){
+        output.textContent = `You won! You chose ${playerSelection} and The computer chose ${compSelection}`;
         playerWin();
  
     }
     else if(playerSelection=='scissors' && compSelection=='scissors'){
+        output.textContent = `Its a tie! You chose ${playerSelection} and The computer chose ${compSelection}`;
         tieAmount();
        
 
     }
     if(playerScore ==5){
-        alert('Congrats you won and outsmarted the computer!');
-        reset();
+       output.textContent =(`Congrats you won and outsmarted the computer! `);
+        // alert('Congrats you won and outsmarted the computer!');
+       
     }
     else if(compScore==5){
-        alert('Awh man, you lost.... Better luck next time')
-        reset();
+       
+        output.textContent = 'Awh man, you lost.... Better luck next time'
+
+       
     }
 }
     
@@ -120,11 +140,24 @@ playRound = (playerSelection, compSelection)=>{
 
 // to reset the game method
 
-reset =()=>{
-    playerScore.innerText = 'Your score is: ' + playerScore
-    compScore.innerText = 'Computer Score is currently: ' +compScore
-    tieAmount.innerText = 'Tie Score is: ' +tieAmount;
+ const reset = function(){
+    playerScore=0;
+    compScore=0;
+    tie=0;
+    document.querySelector('#player-score').innerText= "Your score is currently: " +playerScore;
+    document.querySelector('#computer-score').innerText= "Computer Score is currently: " +compScore;
+    output.textContent = 'May the Best Win';
+    document.querySelector('#ties').innerText= 'Amount of ties: ' +tie;
+   
+
+   
 }
+//type error here 
+const resetGame= document.querySelector('.res');
+ resetGame.addEventListener('click', function(){
+    reset();
+ })
+
 
 
 
